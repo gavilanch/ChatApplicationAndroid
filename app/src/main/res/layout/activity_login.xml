@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/wrapperPassword"
-        android:layout_above="@id/layoutButtons">
+        android:layout_above="@+id/layoutButtons">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,6 +68,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
         android:visibility="gone"
-        android:layout_below="@id/layoutButtons"
+        android:layout_below="@+id/layoutButtons"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>
