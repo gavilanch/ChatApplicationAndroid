@@ -35,6 +35,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Bind(R.id.layoutMainContainer)
     RelativeLayout layoutMainContainer;
 
+    private LoginPresenter loginPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,14 +74,15 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         progressBar.setVisibility(View.GONE);
     }
 
+    @OnClick(R.id.btnSignUp)
     @Override
     public void handleSignUp() {
-
+        loginPresenter.registerNewUser(txtEmail.getText().toString(), txtPassword.getText().toString());
     }
 
     @Override
     public void handleSignIn() {
-
+        loginPresenter.validateLogin(txtEmail.getText().toString(), txtPassword.getText().toString());
     }
 
     @Override
