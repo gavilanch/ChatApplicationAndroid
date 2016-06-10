@@ -1,5 +1,6 @@
 package com.example.felipe.androidchat.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 import com.example.felipe.androidchat.R;
+import com.example.felipe.androidchat.contactlist.ContactListActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -87,7 +89,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Override
     public void navigateToMainScreen() {
-
+        startActivity(new Intent(this, ContactListActivity.class));
     }
 
     @Override
