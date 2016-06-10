@@ -1,4 +1,4 @@
-package com.example.felipe.androidchat;
+package com.example.felipe.androidchat.login;
 
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+
+import com.example.felipe.androidchat.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

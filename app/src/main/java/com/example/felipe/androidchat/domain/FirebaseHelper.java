@@ -1,4 +1,4 @@
-package com.example.felipe.androidchat;
+package com.example.felipe.androidchat.domain;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.DataSnapshot;
