@@ -48,16 +48,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         loginPresenter = new LoginPresenterImpl(this);
     }
 
-    @OnClick({R.id.btnSignIn, R.id.btnSignUp})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btnSignIn:
-                break;
-            case R.id.btnSignUp:
-                break;
-        }
-    }
-
     @Override
     public void enableInputs() {
         setInputs(true);
@@ -84,6 +74,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         loginPresenter.registerNewUser(txtEmail.getText().toString(), txtPassword.getText().toString());
     }
 
+    @OnClick(R.id.btnSignIn)
     @Override
     public void handleSignIn() {
         loginPresenter.validateLogin(txtEmail.getText().toString(), txtPassword.getText().toString());
