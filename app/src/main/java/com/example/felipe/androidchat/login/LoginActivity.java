@@ -16,7 +16,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Bind(R.id.txtEmail)
     EditText txtEmail;
@@ -50,5 +50,62 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.btnSignUp:
                 break;
         }
+    }
+
+    @Override
+    public void enableInputs() {
+        setInputs(true);
+    }
+
+    @Override
+    public void disableInputs() {
+        setInputs(false);
+    }
+
+    @Override
+    public void showProgress() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void handleSignUp() {
+
+    }
+
+    @Override
+    public void handleSignIn() {
+
+    }
+
+    @Override
+    public void navigateToMainScreen() {
+
+    }
+
+    @Override
+    public void loginError(String error) {
+
+    }
+
+    @Override
+    public void newUserSuccess() {
+
+    }
+
+    @Override
+    public void newUserError(String error) {
+
+    }
+
+    private void setInputs(boolean enabled){
+        txtEmail.setEnabled(enabled);
+        txtPassword.setEnabled(enabled);
+        btnSignIn.setEnabled(enabled);
+        btnSignUp.setEnabled(enabled);
     }
 }
