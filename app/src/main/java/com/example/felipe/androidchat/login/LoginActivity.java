@@ -2,6 +2,7 @@ package com.example.felipe.androidchat.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -94,17 +95,23 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Override
     public void loginError(String error) {
-
+        notifyError(R.string.login_error_message_signin, error);
     }
 
     @Override
     public void newUserSuccess() {
-
+        Snackbar.make(layoutMainContainer, R.string.login_notice_message_signup, Snackbar.LENGTH_SHORT).show();
     }
 
     @Override
     public void newUserError(String error) {
+        notifyError(R.string.login_error_message_signup, error);
+    }
 
+    private void notifyError(int resourceString, String error){
+        txtPassword.setText("");
+        String msgError = String.format(getString(R.string.login_error_message_signup), error);
+        txtPassword.setError(msgError);
     }
 
     private void setInputs(boolean enabled){
