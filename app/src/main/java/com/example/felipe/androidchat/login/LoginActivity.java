@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     private void notifyError(int resourceString, String error){
         txtPassword.setText("");
-        String msgError = String.format(getString(R.string.login_error_message_signup), error);
+        String msgError = String.format(getString(resourceString), error);
         txtPassword.setError(msgError);
     }
 
