@@ -51,7 +51,7 @@ public class LoginRepositoryImpl implements LoginRepository {
                                 myUserReference.setValue(currentUser);
                             }
                         }
-                        helper.changeUserConnectionStatus(currentUser.ONLINE);
+                        helper.changeUserConnectionStatus(User.ONLINE);
                         postEvent(LoginEvent.onSignInSuccess);
                     }
 
