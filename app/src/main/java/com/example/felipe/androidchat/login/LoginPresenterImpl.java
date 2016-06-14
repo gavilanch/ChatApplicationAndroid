@@ -6,6 +6,8 @@ import com.example.felipe.androidchat.lib.EventBus;
 import com.example.felipe.androidchat.lib.GreenRobotEventBus;
 import com.example.felipe.androidchat.login.events.LoginEvent;
 
+import org.greenrobot.eventbus.Subscribe;
+
 public class LoginPresenterImpl implements LoginPresenter {
 private EventBus eventBus;
     private LoginView loginView;
@@ -47,6 +49,7 @@ private EventBus eventBus;
     }
 
     @Override
+    @Subscribe
     public void onEventMainThread(LoginEvent event) {
         switch (event.getEventType()){
             case LoginEvent.onSignInSuccess:
