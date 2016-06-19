@@ -1,9 +1,9 @@
-package com.example.felipe.androidchat.contactlist.ui.adapters;
+package com.example.felipe.androidchat.lib;
 
 import android.widget.ImageView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public interface ImageLoading {
+public interface ImageLoader {
     void load(ImageView imgAvatar, String url);
 }

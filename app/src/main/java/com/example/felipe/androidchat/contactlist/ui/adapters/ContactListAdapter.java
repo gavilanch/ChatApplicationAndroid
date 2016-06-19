@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.felipe.androidchat.R;
 import com.example.felipe.androidchat.entities.User;
+import com.example.felipe.androidchat.lib.ImageLoader;
 
 import java.util.List;
 
@@ -20,10 +21,10 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
 
 
     private List<User> contactList;
-    private ImageLoading imageLoader;
+    private ImageLoader imageLoader;
     private OnItemClickListener onItemClickListener;
 
-    public ContactListAdapter(List<User> contactList, ImageLoading imageLoader, OnItemClickListener onItemClickListener) {
+    public ContactListAdapter(List<User> contactList, ImageLoader imageLoader, OnItemClickListener onItemClickListener) {
         this.contactList = contactList;
         this.imageLoader = imageLoader;
         this.onItemClickListener = onItemClickListener;
