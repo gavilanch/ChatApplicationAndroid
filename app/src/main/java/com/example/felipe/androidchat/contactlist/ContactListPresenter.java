@@ -1,5 +1,7 @@
 package com.example.felipe.androidchat.contactlist;
 
+import com.example.felipe.androidchat.contactlist.events.ContactListEvent;
+
 public interface ContactListPresenter {
 
     void onCreate();

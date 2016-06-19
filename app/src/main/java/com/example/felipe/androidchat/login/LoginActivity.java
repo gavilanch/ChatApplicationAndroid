@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 import com.example.felipe.androidchat.R;
-import com.example.felipe.androidchat.contactlist.ContactListActivity;
+import com.example.felipe.androidchat.contactlist.ui.ContactListActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

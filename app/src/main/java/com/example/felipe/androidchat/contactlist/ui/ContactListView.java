@@ -1,4 +1,4 @@
-package com.example.felipe.androidchat.contactlist;
+package com.example.felipe.androidchat.contactlist.ui;
 
 import com.example.felipe.androidchat.entities.User;
 
