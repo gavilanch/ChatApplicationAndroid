@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.felipe.androidchat.R;
+import com.example.felipe.androidchat.domain.AvatarHelper;
 import com.example.felipe.androidchat.entities.User;
 import com.example.felipe.androidchat.lib.ImageLoader;
 
@@ -47,10 +48,10 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         int color = isOnline ? Color.GREEN : Color.RED;
 
         holder.txtUser.setText(email);
-        holder.txtUser.setText(status);
+        holder.txtStatus.setText(status);
         holder.txtStatus.setTextColor(color);
 
-        imageLoader.load(holder.imgAvatar, "");
+        imageLoader.load(holder.imgAvatar, AvatarHelper.getAvatarUrl(email));
     }
 
     @Override
