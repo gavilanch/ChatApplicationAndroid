@@ -1,4 +1,4 @@
-package com.example.felipe.androidchat.addcontact;
+package com.example.felipe.androidchat.addcontact.ui;
 
 
 import android.os.Bundle;
