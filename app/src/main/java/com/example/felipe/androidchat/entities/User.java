@@ -35,4 +35,16 @@ public class User {
     public void setContacts(Map<String, Boolean> contacts) {
         this.contacts = contacts;
     }
+
+    @Override
+    public boolean equals(Object object){
+        boolean equal = false;
+
+        if (object instanceof User){
+            User user2 = (User)object;
+            equal = this.email.equals(user2.getEmail());
+        }
+
+        return equal;
+    }
 }
