@@ -60,7 +60,7 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
     }
 
     private void setupToolbar() {
-       // toolbar.setTitle(presenter.getCurrentUserEmail());
+       toolbar.setTitle(presenter.getCurrentUserEmail());
         setSupportActionBar(toolbar);
     }
 
