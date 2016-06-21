@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.felipe.androidchat.R;
 import com.example.felipe.androidchat.contactlist.ContactListPresenter;
+import com.example.felipe.androidchat.contactlist.ContactListPresenterImpl;
 import com.example.felipe.androidchat.contactlist.ui.adapters.ContactListAdapter;
 import com.example.felipe.androidchat.contactlist.ui.adapters.OnItemClickListener;
 import com.example.felipe.androidchat.entities.User;
@@ -42,17 +43,15 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
 
         setupAdapter();
         setupRecyclerView();
-        //presenter.onCreate();
+        presenter = new ContactListPresenterImpl(this);
+        presenter.onCreate();
         setupToolbar();
 
     }
 
     private void setupAdapter(){
         ImageLoader loader = new GlideImageLoader(this.getApplicationContext());
-        User user = new User();
-        user.setEmail("aacs852@gmail.com");
-        user.setOnline(true);
-        adapter = new ContactListAdapter(Arrays.asList( new User[]{user}), loader, this);
+        adapter = new ContactListAdapter(new ArrayList<User>(), loader, this);
     }
 
     private void setupRecyclerView() {
@@ -65,7 +64,7 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
         setSupportActionBar(toolbar);
     }
 
-    /*
+
     @Override
     protected void onDestroy() {
         presenter.onDestroy();
@@ -83,7 +82,7 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
         presenter.onPause();
         super.onPause();
     }
-    */
+
 
     @OnClick(R.id.fab)
     public void addContact(){
@@ -92,17 +91,17 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
 
     @Override
     public void onContactAdded(User user) {
-
+        adapter.add(user);
     }
 
     @Override
     public void onContactChanged(User user) {
-
+        adapter.update(user);
     }
 
     @Override
     public void onContactRemoved(User user) {
-
+        adapter.remove(user);
     }
 
     @Override
