@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.example.felipe.androidchat.R;
+import com.example.felipe.androidchat.addcontact.ui.AddContactFragment;
 import com.example.felipe.androidchat.contactlist.ContactListPresenter;
 import com.example.felipe.androidchat.contactlist.ContactListPresenterImpl;
 import com.example.felipe.androidchat.contactlist.ui.adapters.ContactListAdapter;
@@ -86,7 +87,7 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
 
     @OnClick(R.id.fab)
     public void addContact(){
-
+        new AddContactFragment().show(getSupportFragmentManager(), getString(R.string.addcontact_message_title));
     }
 
     @Override
