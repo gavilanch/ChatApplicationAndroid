@@ -12,11 +12,14 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.felipe.androidchat.R;
+import com.example.felipe.androidchat.addcontact.AddContactPresenter;
+import com.example.felipe.androidchat.addcontact.AddContactPresenterImpl;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,8 +35,10 @@ public class AddContactFragment extends DialogFragment implements AddContactView
     @Bind(R.id.progressBar)
     ProgressBar progressBar;
 
+    AddContactPresenter presenter;
+
     public AddContactFragment() {
-        // Required empty public constructor
+        presenter = new AddContactPresenterImpl(this);
     }
 
     @NonNull
@@ -88,6 +93,7 @@ public class AddContactFragment extends DialogFragment implements AddContactView
     @Override
     public void contactAdded() {
         Toast.makeText(getActivity(), getString(R.string.addcontact_message_contactadded), Toast.LENGTH_SHORT).show();
+        dismiss();
     }
 
     @Override
@@ -104,6 +110,32 @@ public class AddContactFragment extends DialogFragment implements AddContactView
 
     @Override
     public void onShow(DialogInterface dialog) {
+        final AlertDialog finalDialog = (AlertDialog)getDialog();
+        if (finalDialog != null){
+            Button btnPositive = finalDialog.getButton(Dialog.BUTTON_POSITIVE);
+            Button btnNegative = finalDialog.getButton(Dialog.BUTTON_NEGATIVE);
 
+            btnPositive.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    presenter.addContact(editTxtEmail.getText().toString());
+                }
+            });
+
+            btnNegative.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   dismiss();
+                }
+            });
+        }
+
+        presenter.onShow();
+    }
+
+    @Override
+    public void onDestroy() {
+        presenter.onDestroy();
+        super.onDestroy();
     }
 }
