@@ -8,6 +8,7 @@ import com.example.felipe.androidchat.lib.EventBus;
 import com.example.felipe.androidchat.lib.GreenRobotEventBus;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
 public class ContactListRepositoryImpl implements ContactListRepository {
@@ -100,7 +101,10 @@ public class ContactListRepositoryImpl implements ContactListRepository {
     @Override
     public void unsubscribeToContactListEvents() {
         if (contactEventListener != null){
-            helper.getMyContactsReference().removeEventListener(contactEventListener);
+           Firebase contactsReference = helper.getMyContactsReference();
+            if (contactsReference != null){
+                contactsReference.removeEventListener(contactEventListener);
+            }
         }
     }
 

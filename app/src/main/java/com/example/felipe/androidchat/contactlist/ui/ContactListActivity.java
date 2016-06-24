@@ -1,5 +1,6 @@
 package com.example.felipe.androidchat.contactlist.ui;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.felipe.androidchat.R;
 import com.example.felipe.androidchat.addcontact.ui.AddContactFragment;
+import com.example.felipe.androidchat.chat.ChatActivity;
 import com.example.felipe.androidchat.contactlist.ContactListPresenter;
 import com.example.felipe.androidchat.contactlist.ContactListPresenterImpl;
 import com.example.felipe.androidchat.contactlist.ui.adapters.ContactListAdapter;
@@ -107,7 +109,10 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
 
     @Override
     public void onItemClick(User user) {
-
+         Intent intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(ChatActivity.EMAIL_KEY, user.getEmail());
+        intent.putExtra(ChatActivity.ONLINE_KEY, user.isOnline());
+        startActivity(intent);
     }
 
     @Override
