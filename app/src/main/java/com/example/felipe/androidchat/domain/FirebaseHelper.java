@@ -60,7 +60,11 @@ public class FirebaseHelper {
     }
 
     public Firebase getContactsReference(String email){
-        return getUserReference(email).child(CONTACTS_PATH);
+        Firebase userReference = getUserReference(email);
+        if (userReference != null){
+            return userReference.child(CONTACTS_PATH);
+        }
+        return null;
     }
 
     public Firebase getMyContactsReference(){
