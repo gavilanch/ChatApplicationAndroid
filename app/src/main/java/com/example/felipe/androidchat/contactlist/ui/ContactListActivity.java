@@ -1,7 +1,6 @@
 package com.example.felipe.androidchat.contactlist.ui;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.felipe.androidchat.R;
 import com.example.felipe.androidchat.addcontact.ui.AddContactFragment;
-import com.example.felipe.androidchat.chat.ChatActivity;
+import com.example.felipe.androidchat.chat.ui.ChatActivity;
 import com.example.felipe.androidchat.contactlist.ContactListPresenter;
 import com.example.felipe.androidchat.contactlist.ContactListPresenterImpl;
 import com.example.felipe.androidchat.contactlist.ui.adapters.ContactListAdapter;
@@ -21,7 +20,6 @@ import com.example.felipe.androidchat.lib.GlideImageLoader;
 import com.example.felipe.androidchat.lib.ImageLoader;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

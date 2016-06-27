@@ -1,4 +1,4 @@
-package com.example.felipe.androidchat.chat;
+package com.example.felipe.androidchat.chat.ui;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,7 +12,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.felipe.androidchat.R;
-import com.example.felipe.androidchat.chat.adapters.ChatAdapter;
+import com.example.felipe.androidchat.chat.ChatPresenter;
+import com.example.felipe.androidchat.chat.ChatPresenterImpl;
+import com.example.felipe.androidchat.chat.ui.adapters.ChatAdapter;
 import com.example.felipe.androidchat.domain.AvatarHelper;
 import com.example.felipe.androidchat.entities.ChatMessage;
 import com.example.felipe.androidchat.lib.GlideImageLoader;
@@ -22,7 +24,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ChatActivity extends AppCompatActivity implements ChatView{
+public class ChatActivity extends AppCompatActivity implements ChatView {
 
     @Bind(R.id.imgAvatar)
     CircleImageView imgAvatar;
