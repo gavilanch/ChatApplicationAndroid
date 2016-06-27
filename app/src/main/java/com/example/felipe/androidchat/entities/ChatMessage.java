@@ -35,4 +35,16 @@ public class ChatMessage {
     public void setSentByMe(Boolean sentByMe) {
         this.sentByMe = sentByMe;
     }
+
+    @Override
+    public boolean equals(Object object){
+        boolean equal = false;
+
+        if (object instanceof User){
+            ChatMessage message = (ChatMessage)object;
+            equal = this.sender.equals(message.getSender()) && this.msg.equals(message.getMsg()) && this.sentByMe == message.getSentByMe();
+        }
+
+        return equal;
+    }
 }
