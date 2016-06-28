@@ -20,6 +20,9 @@ import com.example.felipe.androidchat.entities.ChatMessage;
 import com.example.felipe.androidchat.lib.GlideImageLoader;
 import com.example.felipe.androidchat.lib.ImageLoader;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -52,8 +55,9 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         ButterKnife.bind(this);
-        setupRecyclerView();
         setupAdapter();
+        setupRecyclerView();
+
 
         presenter = new ChatPresenterImpl(this);
         presenter.onCreate();
@@ -63,10 +67,12 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
     }
 
     private void setupAdapter() {
+        adapter = new ChatAdapter(this, new ArrayList<ChatMessage>());
     }
 
     private void setupRecyclerView() {
         messageRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        messageRecyclerView.setAdapter(adapter);
     }
 
     private void setupToolbar(Intent intent) {
