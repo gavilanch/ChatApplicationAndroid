@@ -1,6 +1,6 @@
 package com.example.felipe.androidchat.chat;
 
-import com.example.felipe.androidchat.chat.events.ChantEvent;
+import com.example.felipe.androidchat.chat.events.ChatEvent;
 import com.example.felipe.androidchat.chat.ui.ChatView;
 import com.example.felipe.androidchat.entities.ChatMessage;
 
@@ -42,7 +42,7 @@ public class ChatPresenterImpl implements ChatPresenter {
     }
 
     @Override
-    public void onEventMainThread(ChantEvent event) {
+    public void onEventMainThread(ChatEvent event) {
 
     }
 }

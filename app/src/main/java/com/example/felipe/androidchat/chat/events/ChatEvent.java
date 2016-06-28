@@ -1,4 +1,4 @@
 package com.example.felipe.androidchat.chat.events;
 
-public class ChantEvent {
+public class ChatEvent {
 }

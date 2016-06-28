@@ -1,6 +1,6 @@
 package com.example.felipe.androidchat.chat;
 
-import com.example.felipe.androidchat.chat.events.ChantEvent;
+import com.example.felipe.androidchat.chat.events.ChatEvent;
 import com.example.felipe.androidchat.entities.ChatMessage;
 
 public interface ChatPresenter {
@@ -11,5 +11,5 @@ public interface ChatPresenter {
 
     void setChatRecipient(String recipient);
     void sendMessage(ChatMessage msg);
-    void onEventMainThread(ChantEvent event);
+    void onEventMainThread(ChatEvent event);
 }
