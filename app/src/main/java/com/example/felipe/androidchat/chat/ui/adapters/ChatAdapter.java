@@ -31,7 +31,11 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder>{
 
     @Override
     public ChatAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_chat, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_chat, null, false);
+        RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        view.setLayoutParams(lp);
+
         return new ViewHolder(view);
     }
 
@@ -71,22 +75,8 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder>{
     }
 
     public void add(ChatMessage msg) {
-        if (!alreadyInAdapter(msg)) {
             this.chatMessages.add(msg);
             this.notifyDataSetChanged();
-        }
-    }
-
-    private boolean alreadyInAdapter(ChatMessage newMsg){
-        boolean alreadyInAdapter = false;
-        for (ChatMessage msg : this.chatMessages) {
-            if (msg.equals(newMsg)) {
-                alreadyInAdapter = true;
-                break;
-            }
-        }
-
-        return alreadyInAdapter;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
