@@ -10,6 +10,6 @@ public interface ChatPresenter {
     void onDestroy();
 
     void setChatRecipient(String recipient);
-    void sendMessage(ChatMessage msg);
+    void sendMessage(String msg);
     void onEventMainThread(ChatEvent event);
 }

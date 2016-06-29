@@ -16,7 +16,7 @@ public class ChatInteractorImpl implements ChatInteractor {
     }
 
     @Override
-    public void sendMessage(ChatMessage msg) {
+    public void sendMessage(String msg) {
         chatRepository.sendMessage(msg);
     }
 

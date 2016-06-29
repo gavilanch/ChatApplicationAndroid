@@ -28,7 +28,7 @@ public class ChatRepositoryImpl implements ChatRepository {
     }
 
     @Override
-    public void sendMessage(ChatMessage msg) {
+    public void sendMessage(String msg) {
        // String keySender = helper.getAuthUserEmail().replace(".","_");
         ChatMessage chatMessage = new ChatMessage();
         chatMessage.setSender(helper.getAuthUserEmail());

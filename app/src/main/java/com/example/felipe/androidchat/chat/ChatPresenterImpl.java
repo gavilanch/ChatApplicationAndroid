@@ -7,6 +7,8 @@ import com.example.felipe.androidchat.entities.User;
 import com.example.felipe.androidchat.lib.EventBus;
 import com.example.felipe.androidchat.lib.GreenRobotEventBus;
 
+import org.greenrobot.eventbus.Subscribe;
+
 public class ChatPresenterImpl implements ChatPresenter {
 
     EventBus eventBus;
@@ -52,11 +54,12 @@ public class ChatPresenterImpl implements ChatPresenter {
     }
 
     @Override
-    public void sendMessage(ChatMessage msg) {
+    public void sendMessage(String msg) {
         chatInteractor.sendMessage(msg);
     }
 
     @Override
+    @Subscribe
     public void onEventMainThread(ChatEvent event) {
         if (chatView != null) {
             ChatMessage msg = event.getMessage();

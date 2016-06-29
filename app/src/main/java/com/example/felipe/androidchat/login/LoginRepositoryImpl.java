@@ -62,7 +62,7 @@ public class LoginRepositoryImpl implements LoginRepository {
 
     @Override
     public void checkSession() {
-        if (dataReference.getAuth() != null){
+        if (dataReference.getAuth() != null && helper.getAuthUserEmail() != null){
             initSignIn();
         }
         else{
